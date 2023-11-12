@@ -38,5 +38,12 @@ git checkout ramaUsuario1
 Modifica el fichero usuario1.txt, añadiendo mas codigo.
 
 . Sube el codigo a su rama en el repositorio remoto
+    git add .
+    git commit -m "subida"
+    git push origin ramaUsuario1
 
 
+
+
+PULL REQUEST
+Vamos a mergear en origin la rama ramaUsuario1 con la rama Master. Esto es hacer una pull request. Lo hacemos desde la interfaz de github: Pull requests → New Pull Requests → Selecciono las ramas que quiero mergear → Normalmente despues de mergear una rama la eliminamos.

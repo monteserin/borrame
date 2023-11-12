@@ -38,5 +38,8 @@ git checkout ramaUsuario1
 Modifica el fichero usuario1.txt, añadiendo mas codigo.
 
 . Sube el codigo a su rama en el repositorio remoto
+    git add .
+    git commit -m "subida"
+    git push origin ramaUsuario1
 
 

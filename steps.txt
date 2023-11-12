@@ -1,1 +1,19 @@
-1. Usuario 1 crea un proyecto y lo sube a github
+Usuario 1
+1. Crea un proyecto.
+2. Dentro del proyecto, crea el fichero usuario1.txt con el texto prueba.
+3. Sube el proyecto a github.
+4. Invita al usuario 2 como miembro: settings → collaboratos → añadimos el colaborador.
+5. Crea un fichero llamado codigoParaMergear.txt con el texto "Codigo del usuario1".
+
+Usuario 2
+3. Acepta la invitacion.
+4. Hace un clone del proyecto en su equipo.
+    git clone [urlDelProyecto]
+4. Añade el fichero codigoParaMergear.txt con el texto "Codigo del usuario2".
+5. Sube el proyecto a github.
+
+Usuario 1
+7. Intenta descargar el proyecto de github con el siguiente comando
+    git pull origin master
+Dara un error, indicando que debemos hacer un merge. Ejecutamos el siguiente comando;
+    git merge

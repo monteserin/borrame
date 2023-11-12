@@ -19,3 +19,24 @@ Dara un error, indicando que debemos hacer un merge. Ejecutamos los siguientes c
     git add .
     git commit -m "subida"
     git merge origin/master
+Tras quedarnos con el codigo final que queremos subir, Ejecutamos
+    git add .
+    git commit -m "subida"
+    git push origin master
+
+
+RAMAS
+Lo mas normal es que un unico usuario trabaje en su propia rama y cuando los cambios estan listos, lo mergee en la rama principal
+
+Usuario 1
+. Crea una rama
+git branch ramaUsuario1
+
+. Se va a la rama recien creada
+git checkout ramaUsuario1
+
+Modifica el fichero usuario1.txt, añadiendo mas codigo.
+
+. Sube el codigo a su rama en el repositorio remoto
+
+

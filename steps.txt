@@ -15,5 +15,7 @@ Usuario 2
 Usuario 1
 7. Intenta descargar el proyecto de github con el siguiente comando
     git pull origin master
-Dara un error, indicando que debemos hacer un merge. Ejecutamos el siguiente comando;
-    git merge
+Dara un error, indicando que debemos hacer un merge. Ejecutamos los siguientes comandos:
+    git add .
+    git commit -m "subida"
+    git merge origin/master

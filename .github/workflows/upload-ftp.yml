@@ -26,7 +26,7 @@ jobs:
           server-dir: "/web/nueva-pagina"
           server: 185.42.104.76
           username: uyuyuyea
-          password: !!1IsdzeVDHxUQyX
+          password: "!!1IsdzeVDHxUQyX"
           timeout: 60000
           log-level: minimal
 

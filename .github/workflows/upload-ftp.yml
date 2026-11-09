@@ -24,7 +24,7 @@ jobs:
       - name: 📂 Sync files with FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server-dir: "/web/nueva-pagina"
+          server-dir: "/web/nueva-pagina/"
           server: 185.42.104.76
           username: uyuyuyea
           password: "!!1IsdzeVDHxUQyX"

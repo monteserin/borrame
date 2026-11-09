@@ -1,0 +1,38 @@
+name: Upload FTP
+
+on:
+  push:
+    branches:
+      - master
+  # Permite lanzarlo a mano desde la pestaña Actions, sin inventarse un commit.
+  workflow_dispatch:
+
+# Dos subidas a la vez se pisarían en el servidor y dejarían el fichero de estado de la acción a
+# medias: si llega un push mientras sube otro, este espera a que el anterior termine.
+concurrency:
+  group: subida-ftp
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Subir /res por FTP
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 📂 Sync files with FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server-dir: "/web/nueva-pagina"
+          server: 185.42.104.76
+          username: uyuyuyea
+          password: !!1IsdzeVDHxUQyX
+          timeout: 60000
+          log-level: minimal
+
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/node_modules/**
+            **/.DS_Store

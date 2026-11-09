@@ -3,6 +3,7 @@ name: Upload FTP
 on:
   push:
     branches:
+      - main
       - master
   # Permite lanzarlo a mano desde la pestaña Actions, sin inventarse un commit.
   workflow_dispatch:
@@ -26,7 +27,7 @@ jobs:
           server-dir: "/web/nueva-pagina"
           server: 185.42.104.76
           username: uyuyuyea
-          password: "!!1IsdzeVDHxUQyX"
+          password: ${{ secrets.FTP_PASSWORD }}
           timeout: 60000
           log-level: minimal
 

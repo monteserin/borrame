@@ -27,7 +27,7 @@ jobs:
           server-dir: "/web/nueva-pagina"
           server: 185.42.104.76
           username: uyuyuyea
-          password: ${{ secrets.FTP_PASSWORD }}
+          password: "!!1IsdzeVDHxUQyX"
           timeout: 60000
           log-level: minimal
 

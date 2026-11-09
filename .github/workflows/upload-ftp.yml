@@ -17,19 +17,34 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Subir /res por FTP
+    name: Subir web por FTP
     steps:
-      - uses: actions/checkout@v4
+      # v5 ya funciona con Node 24 (quita el aviso de Node 20 para este paso).
+      - uses: actions/checkout@v5
 
       - name: 📂 Sync files with FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server-dir: "/web/nueva-pagina/"
+          # Los datos de acceso van en Settings → Secrets and variables → Actions,
+          # nunca escritos aquí: el repositorio es público.
           server: 185.42.104.76
           username: uyuyuyea
           password: "!!1IsdzeVDHxUQyX"
+
+          # FTP cifrado. Si el hosting no admite FTPS, cambia a: protocol: ftp
+          protocol: ftps
+          # Necesario si FTP_SERVER es una IP: el certificado del servidor no coincidirá con ella.
+          # Si usas el nombre de dominio del servidor FTP, puedes quitar esta línea.
+          security: loose
+
+          # Carpeta local que se sube (la raíz del repo) y carpeta de destino en el servidor.
+          # Ambas deben terminar en /.
+          local-dir: ./
+          server-dir: /web/nueva-pagina/
+
           timeout: 60000
-          log-level: minimal
+          # Muestra la conversación FTP completa en el log. Cuando funcione, vuelve a: minimal
+          log-level: verbose
 
           exclude: |
             **/.git*
